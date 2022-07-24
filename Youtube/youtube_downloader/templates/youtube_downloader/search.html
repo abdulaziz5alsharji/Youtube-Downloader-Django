@@ -1,0 +1,17 @@
+{% extends 'youtube_downloader/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="title">
+            <h1>Youtube Downloader</h1>
+        </div>
+        <form action="{% url 'youtube_downloader:search' %}" method="POST">
+            {% csrf_token %}
+            <input type="url" placeholder="Youtube Link" name="url"><br>
+            {% comment %} <select name="quality">
+                <option value="one">one</option>
+            </select> {% endcomment %}
+        <br><input type="submit" value="Search"><br>
+        </form>
+    </div>
+{% endblock content%}
